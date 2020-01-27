@@ -1,0 +1,93 @@
+.section__create {
+  width: 100%;
+  display: flex;
+
+  .form__container {
+    z-index: 10;
+    display: block;
+    position: relative;
+    max-width: 600px;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+      0 2px 6px 2px rgba(60, 64, 67, 0.15);
+
+    input {
+      width: 100%;
+      display: block;
+      border: none;
+      font-family: Product Sans, system, -apple-system, BlinkMacSystemFont,
+        Roboto, Helvetica Neue, Segoe UI, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 10px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .form__textarea {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background-color: transparent;
+      resize: none;
+      min-height: 5rem;
+      max-height: 50vh;
+      font-family: Product Sans, system, -apple-system, BlinkMacSystemFont,
+        Roboto, Helvetica Neue, Segoe UI, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .textarea__content {
+      font-size: 16px;
+      font-weight: 300;
+    }
+
+    button {
+      position: absolute;
+      right: 18px;
+      bottom: -18px;
+      background: #61dbfb;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+        0 2px 6px 2px rgba(60, 64, 67, 0.15);
+      font-size: 24px;
+      line-height: 1;
+      text-align: center;
+      cursor: pointer;
+
+      span {
+        position: relative;
+        top: -2px;
+        left: 0.5px;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+}

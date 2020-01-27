@@ -1,0 +1,96 @@
+.edit__backdrop {
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsla(0, 0%, 89.8%, 0.75);
+  z-index: 102;
+
+  .edit__container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 20vh;
+  }
+
+  .edit__form {
+    display: grid;
+    grid-template-columns: 100%;
+    position: relative;
+    max-width: 600px;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+      0 2px 6px 2px rgba(60, 64, 67, 0.15);
+    z-index: 106;
+
+    input,
+    textarea {
+      border: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    input {
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    textarea {
+      font-size: 16px;
+      font-weight: 300;
+    }
+  }
+
+  .form__textarea {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    resize: none;
+    min-height: 5rem;
+    max-height: 50vh;
+    font-family: Product Sans, system, -apple-system, BlinkMacSystemFont, Roboto,
+      Helvetica Neue, Segoe UI, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .edit__footer {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 4px;
+
+      &:hover,
+      &:focus {
+        svg {
+          transition: all 0.2s ease-in;
+          fill: black;
+        }
+      }
+    }
+
+    button:nth-child(2) {
+      &:focus,
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.08);
+      }
+    }
+  }
+}
