@@ -13,6 +13,11 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/notes', function(){
+    $note = [
+        'title' => 'This is a test title',
+        'note' => 'this is the body'
+    ];
+    
+    return $note;
 });
