@@ -12,12 +12,12 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+use App\Note;
 
-Route::get('/notes', function(){
-    $note = [
-        'title' => 'This is a test title',
-        'note' => 'this is the body'
-    ];
-    
-    return $note;
+Route::prefix('v1')->group(function(){
+    Route::apiResource('/note', 'Api\v1\NotesController')
+        ->only(['store','show','update','destroy']);
+
+    Route::apiResource('/notes', 'Api\v1\NotesController')
+        ->only('index');
 });

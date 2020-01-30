@@ -1,4 +1,5 @@
 import React, { useReducer, createContext } from 'react';
+import axios from 'axios';
 
 const NotesContext = createContext();
 
@@ -40,8 +41,17 @@ const notesReducer = (state, action) => {
 };
 
 const NotesProvider = ({ children }) => {
-  const [noteState, dispatch] = useReducer(notesReducer, []);
+  const initialState = async () => {
+    return await axios.get('http://api.notekeeper.test/v1/notes')
+      .then(res => {
+        return res.data.data
+      })
+  };
 
+  console.log(initialState())
+
+  const [noteState, dispatch] = useReducer(notesReducer, []);
+  
   return (
     <NotesContext.Provider value={[noteState, dispatch]}>
       {children}
