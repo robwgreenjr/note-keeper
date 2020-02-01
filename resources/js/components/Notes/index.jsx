@@ -14,7 +14,7 @@ const Notes = () => {
   if (editStatus) {
     edit = <EditNote setEditStatus={setEditStatus} />;
   }
-
+  
   return (
     <div className="notes__container">
       {edit}

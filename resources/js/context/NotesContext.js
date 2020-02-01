@@ -67,7 +67,7 @@ const notesReducer = (state, action) => {
 
 const NotesProvider = ({ children }) => {
   const [noteState, dispatch] = useReducer(notesReducer, []);
-
+  
   useEffect(() => {
     function fetchData() {
       axios
@@ -76,7 +76,7 @@ const NotesProvider = ({ children }) => {
     }
     fetchData();
   },[])
-
+  
   return (
     <NotesContext.Provider value={[noteState, dispatch]}>
       {children}
